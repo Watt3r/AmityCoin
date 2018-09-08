@@ -364,7 +364,12 @@ difficulty_type Currency::nextDifficulty(std::vector<std::uint64_t> timestamps, 
     int64_t N = CryptoNote::parameters::DIFFICULTY_WINDOW;
     int64_t L(0), ST, sum_3_ST(0), next_D, prev_D;
 
-    if (timestamps.size() <= static_cast<uint64_t>(N+1))
+    /* So we can generate the genesis block */
+    if (timestamps.size() <= 1)
+    {
+        return 0;
+    }
+    else if (timestamps.size() <= static_cast<uint64_t>(N+1))
     {
         return 1000;
     }

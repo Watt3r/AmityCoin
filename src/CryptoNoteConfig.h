@@ -64,7 +64,7 @@ const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json"
 } // parameters
 
 const char     CRYPTONOTE_NAME[]                             = "AmityCoin";
-const char     GENESIS_COINBASE_TX_HEX[]                     = "010f01ff000188f3b501029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd0880712101607089b09fd3dbe8ea5902143915915cfdf762e0ebe3afe7260415efe3266577";
+const char     GENESIS_COINBASE_TX_HEX[]                     = "010f01ff000188f3b501029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd088071210172e3227f886232f4deb585dbc69b663ed66d478ae350ddde992c2a81c66de079";
 
 const uint8_t  CURRENT_TRANSACTION_VERSION                   =  1;
 const uint8_t  BLOCK_MAJOR_VERSION_1                         =  1;

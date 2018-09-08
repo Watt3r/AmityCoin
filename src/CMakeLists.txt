@@ -51,7 +51,6 @@ add_library(Transfers ${Transfers})
 add_library(Wallet ${Wallet} ${WalletLegacy})
 add_library(PaymentGate ${PaymentGate})
 add_library(JsonRpcServer ${JsonRpcServer})
-add_library(Mnemonics ${Mnemonics})
 
 add_executable(ConnectivityTool ${ConnectivityTool})
 add_executable(Daemon ${Daemon})

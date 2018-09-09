@@ -64,7 +64,7 @@ const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json"
 } // parameters
 
 const char     CRYPTONOTE_NAME[]                             = "AmityCoin";
-const char     GENESIS_COINBASE_TX_HEX[]                     = "";
+const char     GENESIS_COINBASE_TX_HEX[]                     = "010f01ff000188f3b501029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121015bd287fc30cbca9a3dc8fd9949d627c3dad7bef56774c3f5b0b5f72f2d05ef74";
 
 const uint8_t  CURRENT_TRANSACTION_VERSION                   =  1;
 const uint8_t  BLOCK_MAJOR_VERSION_1                         =  1;
@@ -92,10 +92,13 @@ const uint64_t P2P_DEFAULT_INVOKE_TIMEOUT                    = 60 * 2 * 1000; //
 const size_t   P2P_DEFAULT_HANDSHAKE_INVOKE_TIMEOUT          = 5000;          // 5 seconds
 const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "8f80f9a5a434a9f1510d13336228debfee9c918ce505efe225d8c94d045fa115";
 
-//TODO Add here your network seed nodes
 const std::initializer_list<const char*> SEED_NODES = {
-  //"your_seed_ip1.com:37000",
-  //"your_seed_ip2.com:37000",
+  "35.242.151.134:37000", // Aaron
+  "104.199.228.58:37000", // Aaron
+  "82.132.228.247:37000", // Aaron
+  "35.189.81.181:37000", // Aaron
+  "92.13.205.196:37000", // Jack
+  "142.93.28.194:37000", // Watt
 };
 
 struct CheckpointData {

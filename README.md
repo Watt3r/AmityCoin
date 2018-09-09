@@ -107,7 +107,7 @@ is the best place to stay active with the forever growing community.
 
 ##### Build AmityCoin
 
-[Build Instructions for AmityCoin](https://github.com/AmityCore/Amitycoin/wiki/Building-Amity). Right now we only have Linux Ubuntu build instructions. Please contribute to the docs with other OS build information. 
+[Build Instructions for AmityCoin](https://github.com/AmityCore/AmityCoin/wiki/Building-AmityCoin). Right now we only have Linux Ubuntu build instructions. Please contribute to the docs with other OS build information. 
 
 ##### Forking AmityCoin
 
@@ -128,6 +128,12 @@ https://wallet.amitycoin.tk/
 https://paper.amitycoin.tk/
 
 *Xandars block explorer and web wallet to come*
+
+**Remote Nodes**
+https://daemon.amitycoin.cf/
+
+**Block Explorer**
+http://blocks.amitycoin.cf/
 
 ***
 

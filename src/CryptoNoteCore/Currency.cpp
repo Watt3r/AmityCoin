@@ -371,7 +371,7 @@ difficulty_type Currency::nextDifficulty(std::vector<std::uint64_t> timestamps, 
     }
     else if (timestamps.size() <= static_cast<uint64_t>(N+1))
     {
-        return 25000;
+        return 12000;
     }
 
     for (int64_t i = 1; i <= N; i++)

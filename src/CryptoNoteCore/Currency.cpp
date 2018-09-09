@@ -367,7 +367,7 @@ difficulty_type Currency::nextDifficulty(std::vector<std::uint64_t> timestamps, 
     /* So we can generate the genesis block */
     if (timestamps.size() <= 1)
     {
-        return 1;
+        return 0;
     }
     else if (timestamps.size() <= static_cast<uint64_t>(N+1))
     {

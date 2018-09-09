@@ -102,6 +102,8 @@ is the best place to stay active with the forever growing community.
 
 *[Brandon Lehmann](https://github.com/brandonlehmann)* - Developer of [TurtleCoin](https://turtlecoin.lol/)
 
+*[zpalmtree](https://github.com/zpalmtree)* - Developer of [TurtleCoin](https://turtlecoin.lol/)
+
 
 ***
 

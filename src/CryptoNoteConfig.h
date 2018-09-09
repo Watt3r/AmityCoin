@@ -35,7 +35,7 @@ const uint64_t MINIMUM_FEE                                   = UINT64_C(10);
 const uint64_t DEFAULT_DUST_THRESHOLD                        = MINIMUM_FEE;
 
 const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY             = 24 * 60 * 60 / DIFFICULTY_TARGET;
-const size_t   DIFFICULTY_WINDOW                             = 500 + 1; // blocks
+const size_t   DIFFICULTY_WINDOW                             = 1500 + 1; // blocks
 const size_t   DIFFICULTY_CUT                                = 60;  // timestamps to cut after sorting
 const size_t   DIFFICULTY_LAG                                = 15;
 
@@ -95,7 +95,7 @@ const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "8f80f9a5a434a9f1
 const std::initializer_list<const char*> SEED_NODES = {
   "35.242.151.134:37000", // Aaron
   "104.199.228.58:37000", // Aaron
-  "82.132.228.247:37000", // Aaron
+  "82.132.216.238:37000", // Aaron
   "35.189.81.181:37000", // Aaron
   "92.13.205.196:37000", // Jack
   "142.93.28.194:37000", // Watt

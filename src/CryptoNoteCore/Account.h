@@ -18,8 +18,7 @@ namespace CryptoNote {
   public:
     AccountBase();
     void generate();
-    void generateDeterministic();
-    Crypto::SecretKey generate_key(const Crypto::SecretKey& recovery_key = Crypto::SecretKey(), bool recover = false, bool two_random = false);
+
     const AccountKeys& getAccountKeys() const;
     void setAccountKeys(const AccountKeys& keys);
     uint64_t get_createtime() const { return m_creation_timestamp; }

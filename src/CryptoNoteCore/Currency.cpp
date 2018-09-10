@@ -354,7 +354,6 @@ bool Currency::parseAmount(const std::string& str, uint64_t& amount) const {
   return Common::fromString(strAmount, amount);
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////
 // LWMA-2 difficulty algorithm 
 // Copyright (c) 2017-2018 Zawy, MIT License
 // https://github.com/zawy12/difficulty-algorithms/issues/3
@@ -367,24 +366,24 @@ difficulty_type Currency::nextDifficulty(std::vector<std::uint64_t> timestamps, 
     /* So we can generate the genesis block */
     if (timestamps.size() <= 1)
     {
-        return 1;
+        return 0;
     }
     else if (timestamps.size() <= static_cast<uint64_t>(N+1))
     {
-        return 12000;
+        return 12500;
     }
 
     for (int64_t i = 1; i <= N; i++)
-    {  
+    {
         ST = static_cast<int64_t>(timestamps[i]) - static_cast<int64_t>(timestamps[i-1]);
         ST = std::max(-6 * T, std::min(ST, 6*T));
 
-        L +=  ST * i; 
+        L +=  ST * i;
 
         if (i > N-3)
         {
             sum_3_ST += ST;
-        } 
+        }
     }
 
     next_D = (static_cast<int64_t>(cumulativeDifficulties[N] - cumulativeDifficulties[0]) * T * (N+1) * 99) / (100 * 2 * L);
@@ -393,14 +392,13 @@ difficulty_type Currency::nextDifficulty(std::vector<std::uint64_t> timestamps, 
     /* Make sure we don't divide by zero if 50x attacker (thanks fireice) */
     next_D = std::max((prev_D*75)/100, std::min(next_D, (prev_D*133)/100));
 
-    if (sum_3_ST < (8 * T) / 10) 
-    {  
+    if (sum_3_ST < (7 * T) / 10)
+    {
         next_D = std::max(next_D, (prev_D * 108) / 100);
     }
 
     return static_cast<uint64_t>(next_D);
 }
-////////////////////////////////////////////////////////////////////////////////////////////////
 
 bool Currency::checkProofOfWork(Crypto::cn_context& context, const Block& block, difficulty_type currentDiffic,
   Crypto::Hash& proofOfWork) const {

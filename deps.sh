@@ -5,7 +5,7 @@
 
 # This is installing the dependencie's
 sudo apt-get update -y
-sudo apt-get install -y build-essential python-dev gcc g++ git cmake libboost1.58-all-dev zip libboost-all-dev libboost-dev
+sudo apt-get install -y build-essential python-dev gcc g++ git cmake libboost1.58-all-dev zip
 # This is building AmityCoin
 export CXXFLAGS="-std=gnu++11"
 sudo mkdir build && cd build

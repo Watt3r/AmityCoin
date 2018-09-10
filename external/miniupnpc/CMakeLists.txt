@@ -48,7 +48,7 @@ if (CMAKE_COMPILER_IS_GNUC)
       set (_PIC -fPIC)
     endif (CMAKE_SYSTEM_NAME STREQUAL "AmigaOS")
 
-    set (CMAKE_C_FLAGS "${_PIC} $ENV{CFLAGS}" # CMAKE_C_FLAGS gets appended to the other C flags
+    set (CMAKE_C_FLAGS "${_PIC} -Wall $ENV{CFLAGS}" # CMAKE_C_FLAGS gets appended to the other C flags
         CACHE STRING "Flags used by the C compiler during normal builds." FORCE)
     set (CMAKE_C_FLAGS_DEBUG "-g -DDDEBUG"
         CACHE STRING "Flags used by the C compiler during debug builds." FORCE)

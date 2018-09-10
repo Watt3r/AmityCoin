@@ -1,5 +1,6 @@
-// Copyright (c) 2012-2018, The CryptoNote developers, The Bytecoin developers, The Karbovanets developers
-// Copyright (c) 2018 The Amity Developers
+// Copyright (c) 2011-2016 The Cryptonote developers
+// Distributed under the MIT/X11 software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #pragma once
 
@@ -25,8 +26,6 @@
 #include <System/Dispatcher.h>
 #include <System/Ipv4Address.h>
 
-std::string remote_fee_address;
-
 namespace CryptoNote
 {
   /************************************************************************/
@@ -43,7 +42,6 @@ namespace CryptoNote
 
     bool process_command(const std::vector<std::string> &args);
     std::string get_commands_str();
-    std::string getFeeAddress();
 
     const CryptoNote::Currency& currency() const { return m_currency; }
 
@@ -64,9 +62,6 @@ namespace CryptoNote
     bool run_console_handler();
 
     bool new_wallet(const std::string &wallet_file, const std::string& password);
-    bool new_wallet(Crypto::SecretKey &secret_key, Crypto::SecretKey &view_key, const std::string &wallet_file, const std::string& password);
-    bool new_wallet(AccountKeys &private_key, const std::string &wallet_file, const std::string& password);
-    bool new_tracking_wallet(AccountKeys &tracking_key, const std::string &wallet_file, const std::string& password);
     bool open_wallet(const std::string &wallet_file, const std::string& password);
     bool close_wallet();
 
@@ -75,8 +70,6 @@ namespace CryptoNote
     bool start_mining(const std::vector<std::string> &args);
     bool stop_mining(const std::vector<std::string> &args);
     bool show_balance(const std::vector<std::string> &args = std::vector<std::string>());
-    bool export_keys(const std::vector<std::string> &args = std::vector<std::string>());
-    bool export_tracking_key(const std::vector<std::string> &args = std::vector<std::string>());
     bool show_incoming_transfers(const std::vector<std::string> &args);
     bool show_payments(const std::vector<std::string> &args);
     bool show_blockchain_height(const std::vector<std::string> &args);
@@ -86,7 +79,7 @@ namespace CryptoNote
     bool save(const std::vector<std::string> &args);
     bool reset(const std::vector<std::string> &args);
     bool set_log(const std::vector<std::string> &args);
-    
+
     bool ask_wallet_create_if_needed();
 
     void printConnectionError() const;
@@ -148,9 +141,6 @@ namespace CryptoNote
   private:
     std::string m_wallet_file_arg;
     std::string m_generate_new;
-    std::string m_import_new;
-    std::string m_restore_new;
-    std::string m_track_new;
     std::string m_import_path;
 
     std::string m_daemon_address;
@@ -172,7 +162,6 @@ namespace CryptoNote
     refresh_progress_reporter_t m_refresh_progress_reporter;
 
     bool m_walletSynchronized;
-    bool m_trackingWallet;
     std::mutex m_walletSynchronizedMutex;
     std::condition_variable m_walletSynchronizedCV;
   };
